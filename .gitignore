@@ -1,0 +1,69 @@
+# Dependencies
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+.env
+
+# Logs
+*.log
+vagent.log
+logs/
+
+# Cache and temp
+__pycache__/
+*.pyc
+.pytest_cache/
+*.cache
+vagent_cache/
+.tmp/
+
+# Output directories
+vagent_results/
+output/
+downloads/
+clips/
+
+# Large binaries
+ffmpeg
+ffmpeg.tar.xz
+ffmpeg-*
+*.mp4
+*.mov
+*.avi
+*.webm
+*.mkv
+*.gif
+*.png
+*.jpg
+*.jpeg
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Config with secrets
+config/*.yaml
+!config/default.yaml
+
+# Environment
+.env.local
+.env.*

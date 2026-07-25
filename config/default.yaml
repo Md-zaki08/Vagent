@@ -1,0 +1,336 @@
+# VAgent Configuration
+# Default configuration for the VAgent multi-agent system
+
+research:
+  # Maximum number of concurrent research operations
+  max_concurrent: 50
+  
+  # Number of research tasks to process in each batch
+  batch_size: 10
+  
+  # Maximum number of websites to search per query
+  max_websites_per_query: 100
+  
+  # Research categories to focus on
+  categories:
+    - technology
+    - business
+    - entertainment
+    - sports
+    - health
+    - science
+    - politics
+    - education
+    - finance
+    - lifestyle
+  
+  # Web search configuration
+  sources:
+    web_search:
+      # Provider: exa, firecrawl, parallel, tavily
+      provider: exa
+      # Maximum number of results per search
+      limit: 100
+      # Maximum characters to extract from each page
+      char_limit: 5000
+
+trend_analysis:
+  # Minimum trend score to consider a topic
+  min_trend_score: 0.3
+  
+  # Minimum growth rate to consider a topic
+  min_growth_rate: 0.2
+  
+  # Maximum number of trends to analyze
+  max_trends: 100
+  
+  # Confidence threshold for trend predictions
+  confidence_threshold: 0.7
+
+content_strategy:
+  # Minimum attention potential required for a topic
+  min_attention_potential: 0.15
+  
+  # Minimum content gap score required
+  min_content_gap: 0.05
+  
+  # Minimum monetization potential required
+  min_monetization: 0.1
+  
+  # Number of videos to create per selected topic
+  videos_per_topic: 10
+
+video_production:
+  # Supported video formats
+  formats:
+    - short_form    # TikTok, Reels, Shorts (15-60s)
+    - medium_form  # YouTube, regular videos (1-5m)
+    - long_form    # Educational, documentaries (10m+)
+    - live_stream  # Live streaming (1h+)
+  
+  # Default durations for each format (in seconds)
+  default_durations:
+    short_form: 30
+    medium_form: 180
+    long_form: 600
+    live_stream: 3600
+  
+  # Maximum number of videos to create per topic
+  max_videos_per_topic: 10
+  
+  # Video production settings
+  production:
+    # Video quality settings
+    quality: "high"  # low, medium, high, ultra
+    
+    # Resolution settings
+    resolution:
+      short_form: "1080x1920"  # Vertical
+      medium_form: "1920x1080"  # Horizontal
+      long_form: "2560x1440"   # HD
+      live_stream: "1920x1080"  # HD
+    
+    # Frame rate
+    fps: 30
+    
+    # Audio settings
+    audio:
+      sample_rate: 44100
+      channels: 2
+      bitrate: "128k"
+
+publishing:
+  # Target platforms for publishing
+  platforms:
+    - youtube
+    - tiktok
+    - instagram
+    - linkedin
+    - twitter
+    - facebook
+  
+  # Optimal posting times for each platform
+  schedule:
+    youtube:
+      - "2 PM"
+      - "5 PM" 
+      - "8 PM"
+    tiktok:
+      - "9 AM"
+      - "12 PM"
+      - "6 PM"
+    instagram:
+      - "11 AM"
+      - "2 PM"
+      - "7 PM"
+    linkedin:
+      - "8 AM"
+      - "12 PM"
+      - "5 PM"
+    twitter:
+      - "8 AM"
+      - "12 PM"
+      - "6 PM"
+    facebook:
+      - "11 AM"
+      - "2 PM"
+      - "7 PM"
+  
+  # Enable automatic publishing
+  auto_publish: true
+  
+  # Maximum number of retry attempts for failed publishes
+  max_retries: 3
+  
+  # Platform-specific settings
+  platform_settings:
+    youtube:
+      # Maximum video length (seconds)
+      max_length: 3600
+      # Recommended video length (seconds)
+      recommended_length: 600
+      # Maximum title length
+      max_title_length: 100
+      # Maximum description length
+      max_description_length: 5000
+      # Maximum tags
+      max_tags: 15
+    
+    tiktok:
+      # Maximum video length (seconds)
+      max_length: 60
+      # Recommended video length (seconds)
+      recommended_length: 15
+      # Maximum title length
+      max_title_length: 150
+      # Maximum description length
+      max_description_length: 2200
+      # Maximum tags
+      max_tags: 5
+    
+    instagram:
+      # Maximum video length (seconds)
+      max_length: 90
+      # Recommended video length (seconds)
+      recommended_length: 30
+      # Maximum caption length
+      max_caption_length: 2200
+      # Maximum tags
+      max_tags: 30
+
+ai:
+  # AI model configuration
+  model: "claude-3-5-sonnet-20241022"
+  
+  # AI model provider
+  provider: "anthropic"
+  
+  # Temperature for creative generation
+  temperature: 0.7
+  
+  # Maximum tokens for responses
+  max_tokens: 4000
+  
+  # System prompt for AI agents
+  system_prompt: |
+    You are VAgent, an expert AI assistant for content creation and trend analysis.
+    You help identify trending topics, create engaging content, and optimize videos
+    for maximum reach and engagement.
+    
+    Your expertise includes:
+    - Web research and trend identification
+    - Content strategy and optimization
+    - Video production planning
+    - Platform-specific publishing strategies
+    - Audience engagement analysis
+    
+    Always provide detailed, actionable insights and recommendations.
+
+logging:
+  # Logging level: DEBUG, INFO, WARNING, ERROR, CRITICAL
+  level: "INFO"
+  
+  # Log format
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  
+  # Log file path
+  file: "vagent.log"
+  
+  # Enable console logging
+  console: true
+  
+  # Enable file logging
+  file_logging: true
+
+storage:
+  # Results directory
+  results_dir: "vagent_results"
+  
+  # Cache directory
+  cache_dir: "vagent_cache"
+  
+  # Maximum cache size in MB
+  max_cache_size_mb: 1000
+  
+  # Database configuration (for production)
+  database:
+    type: "sqlite"  # sqlite, postgresql, mysql
+    path: "vagent.db"
+    
+    # PostgreSQL/MySQL settings (if using)
+    postgresql:
+      host: "localhost"
+      port: 5432
+      database: "vagent"
+      username: "vagent_user"
+      password: "vagent_password"
+    
+    mysql:
+      host: "localhost"
+      port: 3306
+      database: "vagent"
+      username: "vagent_user"
+      password: "vagent_password"
+
+# Performance optimization
+performance:
+  # Enable parallel processing
+  parallel_processing: true
+  
+  # Maximum number of parallel workers
+  max_workers: 8
+  
+  # Enable result caching
+  caching: true
+  
+  # Cache expiration time in hours
+  cache_expiration_hours: 24
+  
+  # Enable progress tracking
+  progress_tracking: true
+  
+  # Enable performance monitoring
+  monitoring: true
+
+# Security settings
+security:
+  # API key encryption
+  encrypt_api_keys: true
+  
+  # Secure storage for credentials
+  secure_storage: true
+  
+  # Rate limiting
+  rate_limiting:
+    enabled: true
+    requests_per_minute: 60
+    requests_per_hour: 1000
+  
+  # Data privacy
+  data_privacy:
+    anonymize_data: true
+    comply_with_gdpr: true
+    comply_with_ccpa: true
+
+# Integration settings
+integrations:
+  # Social media APIs
+  social_media:
+    twitter:
+      api_key: ""
+      api_secret: ""
+      access_token: ""
+      access_token_secret: ""
+    
+    instagram:
+      access_token: ""
+    
+    tiktok:
+      access_token: ""
+  
+  # Video editing tools
+  video_editing:
+    # FFmpeg settings
+    ffmpeg:
+      path: "ffmpeg"
+      presets:
+        fast: "-preset fast -crf 23"
+        slow: "-preset slow -crf 18"
+    
+    # FFmpeg path (auto-detected if not specified)
+    auto_detect_ffmpeg: true
+  
+  # AI video generation
+  ai_video_generation:
+    enabled: false
+    provider: "runway"  # runway, pika, sora
+    api_key: ""
+    
+  # Cloud storage
+  cloud_storage:
+    enabled: false
+    provider: "aws"  # aws, google, azure
+    credentials:
+      access_key: ""
+      secret_key: ""
+      region: "us-east-1"
